@@ -13,6 +13,8 @@ public class Reserva {
     private String nome;
     private String filme;
 
+    private String horario;
+
     public Long getId() {
         return id;
     }
