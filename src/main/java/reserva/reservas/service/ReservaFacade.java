@@ -25,7 +25,7 @@ public class ReservaFacade {
         reserva.setFilmeDisponivel(to.getFilmeDisponivel());
         reserva.setNome(to.getNome());
         reserva.setQuantidade(to.getQuantidade());
-        FilmeDisponivel filme = repositoryfilm.findByNomeFilme(to.getFilmeDisponivel());
+        FilmeDisponivel filme = repositoryfilm.findByNomeFilme(to.getFilmeDisponivel()).get(0);
         filme.setQuantidade(filme.getQuantidade() - to.getQuantidade());
         repositoryfilm.save(filme);
         repository.save(reserva);
@@ -34,7 +34,7 @@ public class ReservaFacade {
     }
 
     public FilmeDisponivel encontrarFilme(String nome){
-        return repositoryfilm.findByNomeFilme(nome);
+        return repositoryfilm.findByNomeFilme(nome).get(0);
     }
 
     private TOReserva converter (Reserva teatro){
