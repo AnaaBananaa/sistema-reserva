@@ -4,7 +4,8 @@ public class TOReserva {
 
     private Long id;
     private String nome;
-    private String filme;
+    private String filmeDisponivel;
+    private int quantidade;
 
     public Long getId() {
         return id;
@@ -22,11 +23,16 @@ public class TOReserva {
         this.nome = nome;
     }
 
-    public String getFilme() {
-        return filme;
+    public int getQuantidade() {
+        return quantidade;
     }
-
-    public void setFilme(String filme) {
-        this.filme = filme;
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+    public String getFilmeDisponivel() {
+        return filmeDisponivel;
+    }
+    public void setFilmeDisponivel(String filmeDisponivel) {
+        this.filmeDisponivel = filmeDisponivel;
     }
 }

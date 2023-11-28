@@ -11,9 +11,8 @@ public class Reserva {
     @Column(columnDefinition = "serial")
     private Long id;
     private String nome;
-    private String filme;
-
-    private String horario;
+    private String filmeDisponivel;
+    private int quantidade;
 
     public Long getId() {
         return id;
@@ -31,11 +30,19 @@ public class Reserva {
         this.nome = nome;
     }
 
-    public String getFilme() {
-        return filme;
+    public int getQuantidade() {
+        return quantidade;
     }
 
-    public void setFilme(String filme) {
-        this.filme = filme;
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public String getFilmeDisponivel() {
+        return filmeDisponivel;
+    }
+
+    public void setFilmeDisponivel(String filmeDisponivel) {
+        this.filmeDisponivel = filmeDisponivel;
     }
 }
