@@ -18,3 +18,13 @@ jobs:
 
     - name: Build project with Maven
       run: mvn -B package --file pom.xml
+
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      DB_HOST: localhost
+      DB_PORT: 5432
+      DB_NAME: reserva
+      DB_USER: postgres
+      DB_PASSWORD: postgres
