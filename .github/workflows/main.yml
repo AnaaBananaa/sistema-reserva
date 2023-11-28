@@ -22,9 +22,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    env:
-      DB_HOST: localhost
-      DB_PORT: 5432
-      DB_NAME: reserva
-      DB_USER: postgres
-      DB_PASSWORD: postgres
+    steps:
+    - name: Checkout do código
+      uses: actions/checkout@v2
+
+    - name: Configuração do ambiente
+      run: |
+        echo "Configurando variáveis de ambiente"
+        export DB_HOST=localhost
+        export DB_PORT=5432
+        export DB_NAME=reserva
+        export DB_USER=postgres
+        export DB_PASSWORD=postgres
+
+    - name: Testar conexão com o banco de dados
+      run: |
+        echo "Testando conexão com o banco de dados"
+        # Comandos para testar a conexão com o banco de dados aqui
