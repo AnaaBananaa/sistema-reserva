@@ -5,20 +5,6 @@ on:
     branches: [ main ]
 
 jobs:
-  build_and_test:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v2
-    - name: Set up JDK 17
-      uses: actions/setup-java@v1
-      with:
-        java-version: 17
-
-    - name: Build project with Maven
-      run: mvn -B package --file pom.xml
-
   build:
     runs-on: ubuntu-latest
 
@@ -39,3 +25,18 @@ jobs:
       run: |
         echo "Testando conexão com o banco de dados"
         # Comandos para testar a conexão com o banco de dados aqui
+  
+  build_and_test:
+    
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK 17
+      uses: actions/setup-java@v1
+      with:
+        java-version: 17
+
+    - name: Build project with Maven
+      run: mvn -B package --file pom.xml
