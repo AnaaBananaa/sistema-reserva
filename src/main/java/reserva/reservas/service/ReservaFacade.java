@@ -34,7 +34,8 @@ public class ReservaFacade {
     }
 
     public FilmeDisponivel encontrarFilme(String nome){
-        return repositoryfilm.findByNomeFilme(nome).get(0);
+        List<FilmeDisponivel> filmes = repositoryfilm.findByNomeFilme(nome);
+        return filmes.size() > 1 ? filmes.get(0) : null;
     }
 
     private TOReserva converter (Reserva teatro){
