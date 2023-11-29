@@ -17,6 +17,6 @@ jobs:
       id: date
       run: echo "::set-output name=date::$(date +'%Y-%m-%d--%M-%S')"
     - name: Build the Docker image # push The image to the docker hub
-      run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_USER}}/${{secrets.REPO_NAME}}:2023-11-29--01-49
+      run: docker build . --file Dockerfile --tag aners/reserva-api:2023-11-29--01-49
     - name: Docker Push
-      run: docker push ${{secrets.DOCKER_USER}}/${{secrets.REPO_NAME}}:2023-11-29--01-49
+      run: docker push aners/reserva-api:2023-11-29--01-49
