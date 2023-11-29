@@ -1,5 +1,5 @@
 # Use uma imagem base com Java e Maven pré-instalados
-FROM maven:3.8.3-openjdk-17 AS builder
+FROM maven:4.0.0-openjdk-17 AS builder
 
 # Copie o código-fonte para dentro do contêiner
 WORKDIR /app
